@@ -6,6 +6,7 @@ const typed = new Typed('.text', {
     loop: true
   });
 
+  
 // Target the elements you want to animate
 const logo = document.querySelector('.logo');
 const navbarLinks = document.querySelectorAll('.navbar a');
