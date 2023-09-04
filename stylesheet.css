@@ -45,9 +45,10 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color: #85FFBD;
+  background-color: rgba(0,0,0,0.3);
   background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
   color: #fff;
+  overflow: hidden;
   
 }
 
