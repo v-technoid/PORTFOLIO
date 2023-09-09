@@ -13,6 +13,70 @@ body {
   background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
 }
 
+.lds-heart {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transform: rotate(45deg);
+  transform-origin: 40px 40px;
+  position: fixed;
+  z-index: 9999;
+  background-color: #2d3436;
+  transition: opacity 0.25s, visibility 1s;
+}
+
+.fade{
+  opacity: 0;
+  visibility: hidden;
+}
+.lds-heart div {
+  top: 32px;
+  left: 32px;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.lds-heart div:after,
+.lds-heart div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+}
+.lds-heart div:before {
+  left: -24px;
+  border-radius: 50% 0 0 50%;
+}
+.lds-heart div:after {
+  top: -24px;
+  border-radius: 50% 50% 0 0;
+}
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  39% {
+    transform: scale(0.85);
+  }
+  45% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
 /* General Styles */
 
 @keyframes bg-color {
@@ -385,257 +449,297 @@ a:active {
   opacity: 1;
 }
 
-#wrapper{
-  width:100vw;
-  height:100vh;
-  box-sizing:border-box;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+#wrapper {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.my-super-cool-btn{
-  position:relative;
+
+.my-super-cool-btn {
+  position: relative;
   font-family: 'Silkscreen', cursive;
   font-size: 10px;
-  text-decoration:none;
-  color:#000;
-  letter-spacing:1px;
-  box-sizing:border-box;
+  text-decoration: none;
+  color: #000;
+  letter-spacing: 1px;
+  box-sizing: border-box;
   display: inline-block;
   text-decoration: none;
   padding: 12px 30px;
   fill: black;
   transition: background-color 0.3s ease;
 }
-.my-super-cool-btn span{
-  position:relative;
-  box-sizing:border-box;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:100px;
-  height:50px;
+
+.my-super-cool-btn span {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 50px;
 }
-.my-super-cool-btn span:before{
-  content:'';
-  width:150px;
-  height:75px;
-  display:block;
-  position:absolute;
-  border-radius:10%;
-  border:7px solid #F3CF14;
-  box-sizing:border-box;
+
+.my-super-cool-btn span:before {
+  content: '';
+  width: 150px;
+  height: 75px;
+  display: block;
+  position: absolute;
+  border-radius: 10%;
+  border: 7px solid #F3CF14;
+  box-sizing: border-box;
   transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
-  box-shadow: 0 30px 85px rgba(0,0,0,0.14), 0 15px 35px rgba(0,0,0,0.14);
+  box-shadow: 0 30px 85px rgba(0, 0, 0, 0.14), 0 15px 35px rgba(0, 0, 0, 0.14);
 }
-.my-super-cool-btn:hover span:before{
-  transform:scale(0.8);
-  box-shadow: 0 20px 55px rgba(0,0,0,0.14), 0 15px 35px rgba(0,0,0,0.14);
+
+.my-super-cool-btn:hover span:before {
+  transform: scale(0.8);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.14), 0 15px 35px rgba(0, 0, 0, 0.14);
 }
-.my-super-cool-btn .dots-container{
-  opacity:0;
+
+.my-super-cool-btn .dots-container {
+  opacity: 0;
   animation: intro 1.6s;
   animation-fill-mode: forwards;
 }
-.my-super-cool-btn .dot{
-  width:8px;
-  height:8px;
-  display:block;
-  background-color:#F3CF14;
-  border-radius:100%;
-  position:absolute;
+
+.my-super-cool-btn .dot {
+  width: 8px;
+  height: 8px;
+  display: block;
+  background-color: #F3CF14;
+  border-radius: 100%;
+  position: absolute;
   transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
 }
-.my-super-cool-btn .dot:nth-child(1){
-  top:50px;
-  left:50px;
-  transform:rotate(-140deg);
+
+.my-super-cool-btn .dot:nth-child(1) {
+  top: 50px;
+  left: 50px;
+  transform: rotate(-140deg);
   animation: swag1-out 0.3s;
   animation-fill-mode: forwards;
-  opacity:0;
+  opacity: 0;
 }
-.my-super-cool-btn .dot:nth-child(2){
-  top:50px;
-  right:50px;
-  transform:rotate(140deg);
+
+.my-super-cool-btn .dot:nth-child(2) {
+  top: 50px;
+  right: 50px;
+  transform: rotate(140deg);
   animation: swag2-out 0.3s;
   animation-fill-mode: forwards;
-  opacity:0;
+  opacity: 0;
 }
-.my-super-cool-btn .dot:nth-child(3){
-  bottom:50px;
-  left:50px;
-  transform:rotate(140deg);
+
+.my-super-cool-btn .dot:nth-child(3) {
+  bottom: 50px;
+  left: 50px;
+  transform: rotate(140deg);
   animation: swag3-out 0.3s;
   animation-fill-mode: forwards;
-  opacity:0;
+  opacity: 0;
 }
-.my-super-cool-btn .dot:nth-child(4){
-  bottom:50px;
-  right:50px;
-  transform:rotate(-140deg);
+
+.my-super-cool-btn .dot:nth-child(4) {
+  bottom: 50px;
+  right: 50px;
+  transform: rotate(-140deg);
   animation: swag4-out 0.3s;
   animation-fill-mode: forwards;
-  opacity:0;
+  opacity: 0;
 }
-.my-super-cool-btn:hover .dot:nth-child(1){
+
+.my-super-cool-btn:hover .dot:nth-child(1) {
   animation: swag1 0.3s;
   animation-fill-mode: forwards;
 }
-.my-super-cool-btn:hover .dot:nth-child(2){
+
+.my-super-cool-btn:hover .dot:nth-child(2) {
   animation: swag2 0.3s;
   animation-fill-mode: forwards;
 }
-.my-super-cool-btn:hover .dot:nth-child(3){
+
+.my-super-cool-btn:hover .dot:nth-child(3) {
   animation: swag3 0.3s;
   animation-fill-mode: forwards;
 }
-.my-super-cool-btn:hover .dot:nth-child(4){
+
+.my-super-cool-btn:hover .dot:nth-child(4) {
   animation: swag4 0.3s;
   animation-fill-mode: forwards;
 }
+
 @keyframes intro {
-   0% {
-     opacity:0;
+  0% {
+    opacity: 0;
   }
+
   100% {
-     opacity:1;
+    opacity: 1;
   }
 }
+
 @keyframes swag1 {
-   0% {
-     top:50px;
-     left:50px;
-     width:8px;
+  0% {
+    top: 50px;
+    left: 50px;
+    width: 8px;
   }
+
   50% {
-    width:30px;
-    opacity:1;
+    width: 30px;
+    opacity: 1;
   }
+
   100% {
-     top:20px;
-     left:20px;
-     width:8px;
-     opacity:1;
+    top: 20px;
+    left: 20px;
+    width: 8px;
+    opacity: 1;
   }
 }
+
 @keyframes swag1-out {
-   0% {
-     top:20px;
-     left:20px;
-     width:8px;
+  0% {
+    top: 20px;
+    left: 20px;
+    width: 8px;
   }
+
   50% {
-     width:30px;
-    opacity:1;
+    width: 30px;
+    opacity: 1;
   }
+
   100% {
-     top:50px;
-     left:50px;
-     width:8px;
-    opacity:0;
+    top: 50px;
+    left: 50px;
+    width: 8px;
+    opacity: 0;
   }
 }
+
 @keyframes swag2 {
-   0% {
-     top:50px;
-     right:50px;
-     width:8px;
+  0% {
+    top: 50px;
+    right: 50px;
+    width: 8px;
   }
+
   50% {
-    width:30px;
-    opacity:1;
+    width: 30px;
+    opacity: 1;
   }
+
   100% {
-     top:20px;
-     right:20px;
-     width:8px;
-     opacity:1;
+    top: 20px;
+    right: 20px;
+    width: 8px;
+    opacity: 1;
   }
 }
+
 @keyframes swag2-out {
-   0% {
-     top:20px;
-     right:20px;
-     width:8px;
+  0% {
+    top: 20px;
+    right: 20px;
+    width: 8px;
   }
+
   50% {
-     width:30px;
-    opacity:1;
+    width: 30px;
+    opacity: 1;
   }
+
   100% {
-     top:50px;
-     right:50px;
-     width:8px;
-    opacity:0;
+    top: 50px;
+    right: 50px;
+    width: 8px;
+    opacity: 0;
   }
 }
+
 @keyframes swag3 {
-   0% {
-     bottom:50px;
-     left:50px;
-     width:8px;
+  0% {
+    bottom: 50px;
+    left: 50px;
+    width: 8px;
   }
+
   50% {
-    width:30px;
-    opacity:1;
+    width: 30px;
+    opacity: 1;
   }
+
   100% {
-     bottom:20px;
-     left:20px;
-     width:8px;
-     opacity:1;
+    bottom: 20px;
+    left: 20px;
+    width: 8px;
+    opacity: 1;
   }
 }
+
 @keyframes swag3-out {
-   0% {
-     bottom:20px;
-     left:20px;
-     width:8px;
+  0% {
+    bottom: 20px;
+    left: 20px;
+    width: 8px;
   }
+
   50% {
-     width:30px;
-    opacity:1;
+    width: 30px;
+    opacity: 1;
   }
+
   100% {
-     bottom:50px;
-     left:50px;
-     width:8px;
-    opacity:0;
+    bottom: 50px;
+    left: 50px;
+    width: 8px;
+    opacity: 0;
   }
 }
+
 @keyframes swag4 {
-   0% {
-     bottom:50px;
-     right:50px;
-     width:8px;
+  0% {
+    bottom: 50px;
+    right: 50px;
+    width: 8px;
   }
+
   50% {
-    width:30px;
-    opacity:1;
+    width: 30px;
+    opacity: 1;
   }
+
   100% {
-     bottom:20px;
-     right:20px;
-     width:8px;
-     opacity:1;
+    bottom: 20px;
+    right: 20px;
+    width: 8px;
+    opacity: 1;
   }
 }
+
 @keyframes swag4-out {
-   0% {
-     bottom:20px;
-     right:20px;
-     width:8px;
+  0% {
+    bottom: 20px;
+    right: 20px;
+    width: 8px;
   }
+
   50% {
-     width:30px;
-    opacity:1;
+    width: 30px;
+    opacity: 1;
   }
+
   100% {
-     bottom:50px;
-     right:50px;
-     width:8px;
-    opacity:0;
+    bottom: 50px;
+    right: 50px;
+    width: 8px;
+    opacity: 0;
   }
 }
 
@@ -822,7 +926,6 @@ a:active {
   font-weight: 700;
   padding: 0px 10px;
   text-align: center;
-  padding: 0;
   margin: 5px;
   position: relative;
 }
@@ -845,21 +948,130 @@ a:active {
   }
 }
 
-#infocorner {}
+#checkone {
+  text-align: center;
+
+
+}
 
 /* Services */
 
 .services {
-  padding: 100px 0;
+  padding: 50px 0;
+  min-height: 5vh;
+  display: grid;
+  place-items: center;
+
+  --bkg: #5eb3fd;
+  --white: #e7e6e6;
+
+  background-color: var(--white);
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
 }
 
-.sub-title {
+/*.sub-title {
   text-align: center;
   margin-bottom: 50px;
 }
 
 .sub-title span {
   color: #00eeff;
+}*/
+
+.containerset {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.titleonly
+{
+  position:absolute;
+  margin-top:50px;
+  margin-left:400px;
+  transform: translate(-50%, -50%);
+}
+.titleonly h1 {
+  font-size: 50px;
+  text-align: center;
+  font-weight: 900;
+  font-family: 'Silkscreen', cursive;
+  color: black;
+}
+
+.ghost {
+  width: 8vmin;
+  height: 10vmin;
+  background-color: var(--white);
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+  background-image: radial-gradient(ellipse at 35% 40%, #000 8%, transparent 0%),
+    radial-gradient(ellipse at 65% 40%, #000 8%, transparent 0%),
+    radial-gradient(ellipse at 50% 60%, #000 8%, transparent 0%);
+  border-radius: 100% / 70% 70% 0% 0%;
+  transform: translateX(100em) rotateZ(-90deg);
+  position: relative;
+  opacity: 0.9;
+  mix-blend-mode: exclusion;
+  animation: ghostMove 4s ease-out infinite;
+}
+
+@keyframes ghostMove {
+  0% {
+    transform: translateX(30em) rotateZ(-90deg);
+  }
+
+  100% {
+    transform: translateX(-35em) rotateZ(-90deg);
+  }
+}
+
+.ghost div {
+  position: absolute;
+  width: 20%;
+  background-color: var(--white);
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+}
+
+.ghost div:nth-of-type(1) {
+  height: 7vmin;
+  left: 0;
+  bottom: -6vmin;
+  border-radius: 100% / 0% 0% 50% 50%;
+}
+
+.ghost div:nth-of-type(2),
+.ghost div:nth-of-type(4) {
+  height: 4vmin;
+  left: 20%;
+  bottom: -3vmin;
+  border-radius: 100% / 50% 50% 0% 0%;
+  background-color: transparent;
+}
+
+.ghost div:nth-of-type(3) {
+  height: 4vmin;
+  left: 40%;
+  bottom: -3.95vmin;
+  border-radius: 100% / 0% 0% 60% 60%;
+  background-color: var(--white);
+}
+
+.ghost div:nth-of-type(4) {
+  left: 60%;
+}
+
+.ghost div:nth-of-type(5) {
+  height: 3vmin;
+  left: 80%;
+  bottom: -2.9vmin;
+  border-radius: 100% / 0% 0% 70% 70%;
+  background-color: var(--white);
 }
 
 .services-list {
@@ -896,6 +1108,7 @@ a:active {
 .services-list p {
   font-size: 18px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 /* Skills */
