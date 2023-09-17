@@ -52,7 +52,7 @@ let observer = new IntersectionObserver(callback);
 // Finally start observing the target element
 observer.observe(target);
 
-    
+
 
 // ----- Send Button Above------------------------------
 const input = document.getElementById('ghost-inputs');
