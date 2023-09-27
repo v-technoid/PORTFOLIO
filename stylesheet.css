@@ -493,15 +493,15 @@ a:active {
 .facebook {
   font-size: 22px;
   padding-top: 9px;
-  border-color: #3b5998;
-  background-color: #3b5998;
+  border-color: #000000;
+  background-color: #000000;
   color: #ffffff;
 
 }
 
 .facebook:hover {
   background-color: #ffffff;
-  color: #3b5998;
+  color: #000000;
 }
 
 /* Twitter Button Styling */
@@ -509,15 +509,15 @@ a:active {
   font-size: 22px;
   padding-top: 10px;
   padding-left: 2px;
-  border-color: #55acee;
-  background-color: #55acee;
+  border-color: #000000;
+  background-color: #000000;
   color: #ffffff;
 
 }
 
 .twitter:hover {
-  background-color: #ffffff;
-  color: #55acee;
+  background-color: #000000;
+  color: #000000;
 }
 
 /* Google+ Button Styling */
@@ -548,53 +548,52 @@ a:active {
 }
 
 .linkedin :hover {
-  background-color: #ffffff;
-  color: #0976b4;
+  background-color: #0976b4;
+  color: #ffffff;
 }
 
 /* Pinterest Button Styling */
 .pinterest {
   font-size: 22px;
   padding-top: 9px;
-  background-color: #cb2027;
+  background-color: rgb(39, 239, 153);
   color: #ffffff;
-  border-color: #cb2027;
+  border-color: rgb(39, 239, 153);
 
 }
 
 .pinterest:hover {
   background-color: #ffffff;
-  color: #cb2027;
+  color: rgb(39, 239, 153);
 }
 
 /* Behance Button Styling */
 .behance {
   font-size: 22px;
   padding-top: 9px;
-  background-color: #1769ff;
+  background-color: #e94efe;
   color: #ffffff;
-  border-color: #1769ff;
-
+  border-color: #e94efe;
 }
 
 .behance :hover {
-  background-color: #ffffff;
-  color: #1769ff;
+  background-color: #e94efe;
+  color: #ffffff;
 }
 
 /* Github Button Styling */
 .github {
   font-size: 22px;
   padding-top: 9px;
-  background-color: #4183c4;
+  background-color: #000000;
   color: #ffffff;
-  border-color: #4183c4;
+  border-color: #000000;
 
 }
 
 .github:hover {
   background-color: #ffffff;
-  color: #4183c4;
+  color: #000000;
 }
 
 /* Youtube Button Styling */
@@ -602,15 +601,15 @@ a:active {
   font-size: 22px;
   padding-top: 9px;
   padding-left: 0px;
-  background-color: #bb0000;
+  background-color: #2519ff;
   color: #ffffff;
-  border-color: #bb0000;
+  border-color: #2519ff;
 
 }
 
 .youtube :hover {
-  background-color: #ffffff;
-  color: #bb0000;
+  background-color: #2519ff;
+  color: #ffffff;
 }
 
 /* Soundcloud Button Styling */
@@ -618,15 +617,15 @@ a:active {
   font-size: 22px;
   padding-top: 9px;
   padding-left: 0px;
-  background-color: #ff3a00;
+  background-color: #000000;
   color: #ffffff;
-  border-color: #ff3a00;
+  border-color: #000000;
 
 }
 
 .soundcloud :hover {
-  background-color: #ffffff;
-  color: #ff3a00;
+  /* background-color: #ffffff; */
+  color: #ffffff;
 }
 
 
@@ -1468,7 +1467,7 @@ skill-set__ratio {
 }
 
 .services-list div {
-  flex-basis: 300px;
+  flex-basis: 500px;
   padding: 30px;
   margin: 0 20px;
   background-color: #fff;
@@ -1600,7 +1599,7 @@ svg text {
   position: relative;
 }
 
-.skills-title::after {
+/* .skills-title::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -1621,7 +1620,7 @@ svg text {
   height: 4px;
   border-radius: 0 2px 2px 0;
   background-color: #2ecc71;
-}
+} */
 
 .skills-icons {
   width: 50px;
@@ -1647,7 +1646,7 @@ svg text {
   left: 0;
   width: 50%;
   height: 90px;
-  background: rgba(100, 100, 100, 0.5);
+  background: rgb(255, 255, 255);
   border-radius: 45px 0 0 45px;
 }
 
@@ -1777,10 +1776,15 @@ svg text {
   margin-top: 50px;
 }
 
+
 .portfolio-item {
   flex-basis: 300px;
   margin: 0 20px;
   text-align: center;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-20px);
 }
 
 .portfolio-item img {
@@ -2301,7 +2305,11 @@ input[type='text']:focus+.ghosts .ghost__legss {
 }
 
 .social-network a.icoFacebook:hover {
-  background-color: #3B5998;
+  background-color: #000000;
+}
+
+.social-network a.icoMedium:hover {
+  background-color: #000000;
 }
 
 .social-network a.icoLinkedin:hover {
@@ -2313,14 +2321,15 @@ input[type='text']:focus+.ghosts .ghost__legss {
 }
 
 .social-network a.icoTwitter:hover {
-  background-color: #3284f6;
+  background-color: #000000;
 }
 
 .social-network a.icoFacebook:hover i,
 .social-network a.icoLinkedin:hover i,
 .social-network a.icoInstagram:hover i,
-.social-network a.icoTwitter:hover i {
-  color: #fff;
+.social-network a.icoTwitter:hover i,
+.social-network a.icoMedium:hover i {
+  color: #ffffff;
 }
 
 .social-network a.socialIcon:hover,
@@ -2538,7 +2547,7 @@ input[type='text']:focus+.ghosts .ghost__legss {
 
   .portfolio-item {
     flex-basis: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 200px;
   }
 }
 
